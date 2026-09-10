@@ -1,0 +1,23 @@
+{
+  "stats": {
+    "unique_videos": 487,
+    "matched_to_gabc": 485,
+    "unmatched": 2,
+    "match_rate": 0.9959
+  },
+  "source_page": "https://gregoriana.sk/graduale/graduale-project-youtube-playlists/",
+  "unmatched_titles": [
+    {
+      "title": "Lectio Cum Tropi: Laudem Deo / Popule Gentium",
+      "youtube_id": "umtBFRGHMi0",
+      "playlist": "Tempus Nativitatis",
+      "note": "Pas de GABC correspondant évident dans GregoBase (composition moderne / trop / style non noté)"
+    },
+    {
+      "title": "Falsobordone Octavi Toni",
+      "youtube_id": "lYCpUO2MsFE",
+      "playlist": "Hebdomada Sancta",
+      "note": "Pas de GABC correspondant évident dans GregoBase (composition moderne / trop / style non noté)"
+    }
+  ]
+}
