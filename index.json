@@ -1,0 +1,31 @@
+{
+  "stats": {
+    "unique_videos": 487,
+    "matched_to_gabc": 485,
+    "unmatched": 2,
+    "match_rate": 0.9959
+  },
+  "files": {
+    "corpus_index": [
+      "corpus_index/part_0.json",
+      "corpus_index/part_1.json",
+      "corpus_index/part_2.json",
+      "corpus_index/part_3.json",
+      "corpus_index/part_4.json"
+    ],
+    "videos": "videos.json",
+    "playlists": "graduale_project_playlists_and_gabc_links.json"
+  },
+  "unmatched_titles": [
+    {
+      "title": "Lectio Cum Tropi: Laudem Deo / Popule Gentium",
+      "youtube_id": "umtBFRGHMi0",
+      "playlist": "Tempus Nativitatis"
+    },
+    {
+      "title": "Falsobordone Octavi Toni",
+      "youtube_id": "lYCpUO2MsFE",
+      "playlist": "Hebdomada Sancta"
+    }
+  ]
+}
