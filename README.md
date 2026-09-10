@@ -9,15 +9,29 @@ Mapping between [Graduale Project](https://gregoriana.sk/graduale/graduale-proje
 | Unique videos | **487** |
 | Matched to GABC | **485** |
 | Match rate | **99.6%** |
-| Unmatched | 2 (tropes / falsobordone — no standard GABC) |
+| Unmatched | **2** |
 
-## Files
+### Unmatched (no GregoBase GABC)
+1. `Lectio Cum Tropi: Laudem Deo / Popule Gentium` — troped lesson  
+2. `Falsobordone Octavi Toni` — polyphony / faux-bourdon  
 
-- `graduale_project_video_gabc_mapping.json` — full mapping (`videos`, `corpus_index`, stats)
-- `graduale_project_playlists_and_gabc_links.json` — 74 playlists + summary
-- `nabc_gabc_with_video_links.json` — subset with NABC neumes + video links
+## Files in this repo
 
-## corpus_index format
+| File | Description |
+|------|-------------|
+| `mapping_meta.json` | Stats + unmatched list |
+| `video_gabc_map.tsv` | Sample mapping (partial — full data in release assets below) |
+| `graduale_project_playlists_and_gabc_links.json` | Playlist index |
+
+## Full mapping (local / upload)
+
+The complete JSON (`graduale_project_video_gabc_mapping.json`, ~340 KB) with `corpus_index` for all 485 matches is produced in the Oremus corpus project:
+
+```text
+GABC-video-notes-alignement/graduale_project_video_gabc_mapping.json
+```
+
+### corpus_index entry
 
 ```json
 {
@@ -32,17 +46,15 @@ Mapping between [Graduale Project](https://gregoriana.sk/graduale/graduale-proje
 }
 ```
 
-Use `piece_id` with GregoBase:
-`https://gregobase.selapa.net/download.php?format=gabc&elem=1&id={piece_id}`
+### Download GABC from GregoBase
 
-(same URL as in [bastonus/jgabc `download-gabc.js`](https://github.com/bastonus/jgabc/blob/master/download-gabc.js))
+Same URL as [bastonus/jgabc `download-gabc.js`](https://github.com/bastonus/jgabc/blob/master/download-gabc.js):
 
-## Unmatched videos
+```
+https://gregobase.selapa.net/download.php?format=gabc&elem=1&id={piece_id}
+```
 
-1. *Lectio Cum Tropi: Laudem Deo / Popule Gentium* — troped lesson
-2. *Falsobordone Octavi Toni* — polyphony / faux-bourdon
+## Related repos
 
-## Related
-
-- https://github.com/bastonus/chant-alignement — alignment pipeline
+- https://github.com/bastonus/chant-alignement — note alignment pipeline
 - https://github.com/bastonus/jgabc — Oremus / Chant Tools

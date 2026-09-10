@@ -10,14 +10,13 @@
     {
       "title": "Lectio Cum Tropi: Laudem Deo / Popule Gentium",
       "youtube_id": "umtBFRGHMi0",
-      "playlist": "Tempus Nativitatis",
-      "note": "Pas de GABC correspondant évident dans GregoBase (composition moderne / trop / style non noté)"
+      "playlist": "Tempus Nativitatis"
     },
     {
       "title": "Falsobordone Octavi Toni",
       "youtube_id": "lYCpUO2MsFE",
-      "playlist": "Hebdomada Sancta",
-      "note": "Pas de GABC correspondant évident dans GregoBase (composition moderne / trop / style non noté)"
+      "playlist": "Hebdomada Sancta"
     }
-  ]
+  ],
+  "gregobase_download": "https://gregobase.selapa.net/download.php?format=gabc&elem=1&id={id}"
 }
