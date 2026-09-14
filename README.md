@@ -2,23 +2,33 @@
 
 **485 / 487** vidéos du Graduale Project liées à un `piece_id` GregoBase (99,6 %).
 
-## Fichiers principaux
+## Mapping complet (recommandé)
 
-### Mapping simple (recommandé)
-- **`map/youtube_to_piece_id.csv`** — colonnes `youtube_id,piece_id` (485 lignes)
+Les 5 fichiers suivants contiennent **tout** le mapping :
 
-### Mapping détaillé
-- **`map/video_gabc_map.tsv`** — titre, playlist, score, has_nabc, incipit, office_part
-- Parties : `map/tsv/part_00.tsv` … `part_09.tsv`
+- `map/csv_part_0.csv`
+- `map/csv_part_1.csv`
+- `map/csv_part_2.csv`
+- `map/csv_part_3.csv`
+- `map/csv_part_4.csv`
 
-### JSON complet (structure originale)
-- `map/json/mapping_videos_part_0.json` … `part_4.json` (~98 vidéos chacun)
-- `map/json/mapping_meta.json`
+Colonnes : `youtube_id,piece_id`
 
-### NABC
-- `nabc/nabc_meta.json` — résumé (193 NABC, 99 avec vidéo)
-- `nabc/nabc_with_video.csv`
-- `nabc/nabc_with_video_part_0.json` … `part_2.json`
+Pour fusionner (si tu as un terminal) :
+```bash
+bash map/merge_csv.sh
+```
+ou manuellement :
+```bash
+head -1 map/csv_part_0.csv > youtube_to_piece_id.csv
+for f in map/csv_part_*.csv; do tail -n +2 "$f" >> youtube_to_piece_id.csv; done
+```
+
+## Autres fichiers
+
+- `map/tsv/part_00.tsv` … (détail titre / playlist / score)
+- `nabc/nabc_meta.json` — 193 NABC, 99 avec vidéo
+- Anciens `map/youtube_piece_0.csv` … (également complets)
 
 ## Télécharger un GABC
 
