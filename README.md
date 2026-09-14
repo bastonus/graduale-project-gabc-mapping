@@ -1,60 +1,47 @@
 # Graduale Project ↔ GABC mapping
 
-Mapping between [Graduale Project](https://gregoriana.sk/graduale/graduale-project-youtube-playlists/) YouTube videos (Marek Klein) and [GregoBase](https://gregobase.selapa.net) GABC scores.
+**485 / 487** vidéos Graduale Project liées à un `piece_id` GregoBase.
 
-## Stats
+## Fichier principal (complet)
 
-| Metric | Value |
-|--------|-------|
-| Unique videos | **487** |
-| Matched to GABC | **485** |
-| Match rate | **99.6%** |
-| Unmatched | **2** |
-
-### Unmatched (no GregoBase GABC)
-1. `Lectio Cum Tropi: Laudem Deo / Popule Gentium` — troped lesson  
-2. `Falsobordone Octavi Toni` — polyphony / faux-bourdon  
-
-## Files in this repo
-
-| File | Description |
-|------|-------------|
-| `mapping_meta.json` | Stats + unmatched list |
-| `video_gabc_map.tsv` | Sample mapping (partial — full data in release assets below) |
-| `graduale_project_playlists_and_gabc_links.json` | Playlist index |
-
-## Full mapping (local / upload)
-
-The complete JSON (`graduale_project_video_gabc_mapping.json`, ~340 KB) with `corpus_index` for all 485 matches is produced in the Oremus corpus project:
-
-```text
-GABC-video-notes-alignement/graduale_project_video_gabc_mapping.json
+```
+map/youtube_piece_0.csv
+map/youtube_piece_1.csv
+map/youtube_piece_2.csv
 ```
 
-### corpus_index entry
+Fusionner :
 
-```json
-{
-  "132_2U3Qsv3jThk": {
-    "piece_id": "132",
-    "youtube_id": "2U3Qsv3jThk",
-    "title": "Introitus: Ad te levavi",
-    "gabc_file": "132.gabc",
-    "office_part": "in",
-    "incipit": "Ad te levavi"
-  }
-}
+```bash
+head -1 map/youtube_piece_0.csv > youtube_to_piece_id.csv
+for f in map/youtube_piece_{0,1,2}.csv; do tail -n +2 "$f" >> youtube_to_piece_id.csv; done
 ```
 
-### Download GABC from GregoBase
+Colonnes : `youtube_id,piece_id`  
+(2 lignes sans `piece_id` = tropes / falsobordone)
 
-Same URL as [bastonus/jgabc `download-gabc.js`](https://github.com/bastonus/jgabc/blob/master/download-gabc.js):
+## Télécharger le GABC
 
 ```
 https://gregobase.selapa.net/download.php?format=gabc&elem=1&id={piece_id}
 ```
 
-## Related repos
+(même URL que [bastonus/jgabc download-gabc.js](https://github.com/bastonus/jgabc/blob/master/download-gabc.js))
 
-- https://github.com/bastonus/chant-alignement — note alignment pipeline
-- https://github.com/bastonus/jgabc — Oremus / Chant Tools
+## Stats
+
+| | |
+|--|--|
+| Vidéos | 487 |
+| Matchées | **485 (99,6%)** |
+| Sans GABC | 2 |
+
+## Non matchées
+
+- `umtBFRGHMi0` — Lectio Cum Tropi: Laudem Deo / Popule Gentium
+- `lYCpUO2MsFE` — Falsobordone Octavi Toni
+
+## Liés
+
+- https://github.com/bastonus/chant-alignement
+- https://github.com/bastonus/jgabc
