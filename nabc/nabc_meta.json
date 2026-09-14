@@ -1,1 +1,11 @@
-{}
+{
+  "summary": {
+    "nabc_pieces_total": 193,
+    "with_video_by_incipit": 99,
+    "without_video": 94,
+    "method": "Match NABC GABC (has_nabc / nabc-lines) to GradualeProject videos by office + incipit (not only ID)",
+    "note": "IDs differ between Gregobase NABC transcriptions (often Marek Klein) and the Andrew Hinkley transcriptions matched earlier; same chant can have multiple GABC IDs."
+  },
+  "nabc_without_video_count": 94,
+  "nabc_with_video_count": 99
+}
