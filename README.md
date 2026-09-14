@@ -1,32 +1,30 @@
 # Graduale Project ↔ GABC mapping
 
-**485 / 487** vidéos Graduale Project liées à un `piece_id` GregoBase.
+**485 / 487** vidéos Graduale Project liées à un `piece_id` GregoBase (99,6 %).
 
-## Fichier principal (complet)
+## Fichiers principaux (complets)
 
-```
-map/youtube_piece_0.csv
-map/youtube_piece_1.csv
-map/youtube_piece_2.csv
-```
+### CSV simple (recommandé)
+- `map/youtube_to_piece_id_complete.csv` — une ligne par vidéo matchée  
+  Colonnes : `youtube_id,piece_id`
 
-Fusionner :
+### TSV détaillé
+- `map/video_gabc_map_full.tsv` — titre, playlist, score, has_nabc  
+  Ou les parties : `map/tsv/part_00.tsv` … `part_09.tsv`
 
-```bash
-head -1 map/youtube_piece_0.csv > youtube_to_piece_id.csv
-for f in map/youtube_piece_{0,1,2}.csv; do tail -n +2 "$f" >> youtube_to_piece_id.csv; done
-```
+### JSON détaillé (vidéos + matched_gabc)
+- `map/json/mapping_videos_part_0.json` … `part_4.json`  
+  Chaque part contient ~98 vidéos avec structure complète.
 
-Colonnes : `youtube_id,piece_id`  
-(2 lignes sans `piece_id` = tropes / falsobordone)
+### NABC
+- `nabc/nabc_meta.json` — résumé (193 NABC, 99 avec vidéo)
+- `nabc/nabc_with_video_part_0.json` … `part_2.json` — liste détaillée
 
 ## Télécharger le GABC
 
 ```
 https://gregobase.selapa.net/download.php?format=gabc&elem=1&id={piece_id}
 ```
-
-(même URL que [bastonus/jgabc download-gabc.js](https://github.com/bastonus/jgabc/blob/master/download-gabc.js))
 
 ## Stats
 
